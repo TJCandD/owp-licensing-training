@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="Internal staff licensing training - One West Point. Not for public distribution.">
+<title>Serving Alcohol at One West Point — Staff Licensing Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14202B;          /* licensing paperwork navy */
+  --ink-soft:#3D5060;
+  --paper:#E8EDF1;        /* cool grey-blue staff notice board */
+  --card:#FFFFFF;
+  --ale:#C97A14;          /* warm ale amber */
+  --ale-tint:#FBEFDC;
+  --stop:#B3261E;         /* refusal red */
+  --stop-tint:#F9E4E2;
+  --go:#1F6B4A;           /* serve green */
+  --go-tint:#E1F0E8;
+  --line:#C3CFD9;
+  --radius:4px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Instrument Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 80px}
+h1,h2,h3,.poster{font-family:'Anton',Impact,'Arial Narrow',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
+.mono{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ---------- header ---------- */
+header{background:var(--ink);color:#fff;padding:0;border-bottom:6px solid var(--ale)}
+.head-inner{max-width:1000px;margin:0 auto;padding:34px 20px 34px;text-align:center}
+.head-inner .eyebrow{color:#9FB3C2}
+header h1{font-size:clamp(34px,7vw,68px);margin:10px 0 22px;color:#fff}
+header h1 em{font-style:normal;color:var(--ale)}
+.head-intro{max-width:66ch;margin:0 auto;text-align:left}
+.head-intro p{color:#C3D2DD;font-size:18px;margin:0 0 14px}
+.head-intro p:last-child{margin-bottom:0}
+.head-intro b{color:#fff}
+.head-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;font-size:14px;color:#C3D2DD;border-top:1px solid #2C3E4C;padding-top:16px;margin-top:26px}
+.head-meta b{color:#fff;font-weight:600}
+.head-dps{max-width:78ch;margin:14px auto 0;text-align:left;font-size:14px;color:#9FB3C2;background:#16242F;border:1px solid #2C3E4C;border-radius:var(--radius);padding:14px 18px}
+.head-dps b{color:var(--ale)}
+
+/* ---------- form controls (sign-off sheet) ---------- */
+label{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+input[type=date],input[type=text]{font-family:'IBM Plex Mono',monospace;font-size:17px;padding:11px 12px;border:1.5px solid var(--line);border-radius:var(--radius);background:#fff;color:var(--ink)}
+input:focus-visible,button:focus-visible,.tab:focus-visible,summary:focus-visible{outline:3px solid var(--ale);outline-offset:2px}
+button{font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:600;padding:12px 20px;border:none;border-radius:var(--radius);background:var(--ink);color:#fff;cursor:pointer}
+button:hover{background:#25384A}
+button.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+button.ghost:hover{background:#DDE5EB}
+
+/* ---------- sections ---------- */
+section{margin-top:56px}
+h2{font-size:clamp(24px,4.4vw,36px);margin:0 0 6px}
+.sub{color:var(--ink-soft);margin:0 0 22px;max-width:70ch}
+
+ol.policecond{counter-reset:pc;list-style:none;padding-left:0;margin:14px 0 18px}
+ol.policecond li{counter-increment:pc;position:relative;padding:14px 18px 14px 52px;margin-bottom:10px;background:#F6F9FB;border:1px solid var(--line);border-left:4px solid var(--ale);border-radius:var(--radius)}
+ol.policecond li::before{content:counter(pc);position:absolute;left:16px;top:13px;width:24px;height:24px;border-radius:50%;background:var(--ale);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-align:center;line-height:24px}
+
+a.xref{color:var(--ale);text-decoration:underline;text-underline-offset:2px;font-weight:600}
+a.xref:hover{color:#8F5406}
+
+/* tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:2px solid var(--line);padding-bottom:0;margin-bottom:0}
+.tab{background:transparent;border:none;border-bottom:3px solid transparent;color:var(--ink-soft);font-weight:600;font-size:14px;padding:10px 12px;cursor:pointer;border-radius:0}
+.tab .num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ale);margin-right:6px}
+.tab:hover{background:#DDE5EB;color:var(--ink)}
+.tab[aria-selected=true]{color:var(--ink);border-bottom-color:var(--ale);background:transparent}
+.panel{background:var(--card);border:1px solid var(--line);border-top:none;border-radius:0 0 var(--radius) var(--radius);padding:28px}
+.panel[hidden]{display:none}
+.panel h3{font-size:22px;margin:0 0 4px}
+.panel .lede{font-size:18px;color:var(--ink-soft);margin:0 0 20px}
+.panel h4{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:26px 0 10px;font-weight:700}
+ul,ol{padding-left:22px;margin:0 0 14px}
+li{margin-bottom:9px}
+.law{font-family:'IBM Plex Mono',monospace;font-size:12px;background:#EFF3F6;border:1px solid var(--line);padding:1px 6px;border-radius:3px;color:var(--ink-soft);white-space:nowrap}
+.pull{border-left:5px solid var(--ale);background:var(--ale-tint);padding:14px 18px;margin:18px 0;font-size:16px}
+.pull.stop{border-left-color:var(--stop);background:var(--stop-tint)}
+.pull strong{display:block;font-family:'Anton',sans-serif;text-transform:uppercase;font-weight:400;font-size:15px;letter-spacing:.03em;margin-bottom:4px}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+tbody tr:nth-child(odd){background:#F6F9FB}
+
+/* two-col grid of do/don't */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.split>div{padding:16px 18px;border-radius:var(--radius)}
+.split .yes{background:var(--go-tint);border:1px solid #B9D6C7}
+.split .no{background:var(--stop-tint);border:1px solid #E5BEBA}
+.split h4{margin-top:0;color:var(--ink)}
+
+/* ---------- spaces ---------- */
+.spaces{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.space{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+.space h3{font-size:22px;margin:0 0 14px}
+.space p{margin:0 0 12px;font-size:14px}
+.space p span{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px}
+.space .day{color:var(--ink-soft)}
+.space .ev{color:var(--ink);font-weight:600}
+.space .ev span{color:var(--ale)}
+.space .fut{margin-bottom:0;font-style:italic;color:#8F5406;font-size:13px;border-top:1px solid var(--line);padding-top:10px}
+@media (max-width:720px){.spaces{grid-template-columns:1fr}}
+
+/* ---------- quiz ---------- */
+.quiz{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.qcount{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);letter-spacing:.08em}
+.qbar{height:6px;background:#DDE5EB;border-radius:3px;margin:12px 0 22px;overflow:hidden}
+.qbar i{display:block;height:100%;background:var(--ale);width:0;transition:width .35s ease}
+.qtext{font-size:20px;font-weight:600;margin:0 0 18px;line-height:1.4}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;background:#F6F9FB;border:1.5px solid var(--line);color:var(--ink);font-weight:500;font-size:16px;padding:14px 16px;border-radius:var(--radius);cursor:pointer}
+.opt:hover{border-color:var(--ink-soft);background:#EFF3F6}
+.opt.correct{background:var(--go-tint);border-color:var(--go)}
+.opt.wrong{background:var(--stop-tint);border-color:var(--stop)}
+.opt:disabled{cursor:default;opacity:1}
+.feedback{margin-top:18px;padding:16px 18px;border-radius:var(--radius);background:#EFF3F6;border-left:5px solid var(--ink-soft);display:none}
+.feedback.show{display:block}
+.feedback b{display:block;font-family:'Anton',sans-serif;text-transform:uppercase;font-weight:400;letter-spacing:.03em;margin-bottom:4px}
+.feedback.right{border-left-color:var(--go);background:var(--go-tint)}
+.feedback.wrongfb{border-left-color:var(--stop);background:var(--stop-tint)}
+.scorecard{text-align:center;padding:14px 0}
+.scorecard .big{font-family:'Anton',sans-serif;font-size:clamp(56px,14vw,110px);line-height:1;color:var(--ale)}
+.scorecard .band{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(20px,4vw,30px);margin:10px 0 6px}
+
+/* ---------- details / trainer ---------- */
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:0;margin-bottom:12px}
+summary{cursor:pointer;padding:16px 20px;font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font-family:'IBM Plex Mono',monospace;color:var(--ale);font-weight:600;margin-right:10px}
+details[open] summary::before{content:"–"}
+details .body{padding:0 20px 20px}
+
+/* ---------- signoff ---------- */
+.signoff{background:var(--ink);color:#fff;border-radius:var(--radius);padding:28px}
+.signoff h2{color:#fff}
+.signoff .sub{color:#9FB3C2}
+.signoff input{width:100%;max-width:340px}
+.sign-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px}
+.signoff label{color:#9FB3C2}
+
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-soft)}
+
+@media (max-width:720px){
+  body{font-size:16px}
+  .dates,.split,.sign-grid{grid-template-columns:1fr}
+  .panel{padding:20px 16px}
+  .board{padding:20px 16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+@media print{
+  /* ink-light, high-contrast version for handouts */
+  body{background:#fff;font-size:11pt;color:#000}
+  .wrap{padding:0}
+  header{background:#fff!important;color:#000;border-bottom:3px solid #000}
+  .head-inner{padding:0 0 12pt;text-align:left}
+  header h1{color:#000;font-size:28pt;margin:6pt 0 10pt}
+  header h1 em{color:#000}
+  .head-inner .eyebrow,.head-meta,.head-intro p,.head-dps{color:#000}
+  .head-intro{max-width:none;margin:0}
+  .head-intro p{font-size:11pt}
+  .head-intro b{color:#000}
+  .head-meta{justify-content:flex-start;border-top:1px solid #000;color:#000}
+  .head-meta b{color:#000}
+  .head-dps{background:#fff!important;border:1px solid #000;margin-left:0;color:#000}
+  .head-dps b{color:#000}
+  /* panels and cards: outline instead of fill, so they don't print as grey slabs */
+  .space,.panel,details,.quiz,table,.pull{background:#fff!important;box-shadow:none}
+  .space,.panel,details{border:1px solid #666!important;page-break-inside:avoid}
+  .spaces{display:block}
+  .space{margin-bottom:10pt}
+  .pull{border:1px solid #000!important;border-left:4pt solid #000!important;background:#fff!important;page-break-inside:avoid}
+  .pull.stop{border-left:4pt solid #000!important}
+  .pull strong{color:#000}
+  .split .yes,.split .no{background:#fff!important;border:1px solid #666!important}
+  tbody tr:nth-child(odd){background:#fff}
+  th,td{border-bottom:1px solid #999}
+  .law{background:#fff;border:1px solid #999}
+  a.xref{color:#000}
+  /* section refs and quiet greys are too pale on paper */
+  .sub,.panel .lede,.eyebrow,.space .day,.space .fut,footer{color:#000!important}
+  .space .fut{font-style:italic}
+  /* interactive bits have no meaning on paper */
+  .tabs,.quiz,button,.qbar{display:none!important}
+  .panel[hidden]{display:block!important}
+  .panel{border-radius:0;margin-bottom:10pt}
+  details .body{display:block!important}
+  summary{font-weight:700}
+  summary::before{content:""}
+  section{margin-top:18pt;page-break-inside:auto}
+  h2{font-size:18pt}
+  .signoff{background:#fff!important;color:#000;border:2px solid #000;page-break-inside:avoid}
+  .signoff h2,.signoff .sub,.signoff label,.signoff p{color:#000!important}
+  .signoff input{border:1px solid #000}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-inner">
+    <p class="eyebrow">One West Point · Staff licensing training · Licensing Act 2003</p>
+    <h1>Serving alcohol is<br>a <em>legal act</em>.<br>Here's the law bit.</h1>
+    <div class="head-intro">
+      <p>This training isn't about pouring the drinks, or selling, or how we are with the residents. This is the part where you and we can be fined if we sell to a resident who is underage or drunk — and where we could end up having our licence taken away.</p>
+      <p><b>The general rule: we cannot sell alcohol to anyone who is not over eighteen, and we must always ask for ID if we feel somebody looks under twenty-five.</b> From now on, we are always cautious.</p>
+    </div>
+    <div class="head-meta">
+      <div><b>Spaces</b> The Club · West Lounge · The Podium</div>
+      <div><b>When we sell or provide alcohol</b> Residents' events · screenings · parties</div>
+      <div><b>Applies to</b> Everyone who takes payment for a drink, or serves one</div>
+      <div><b>Version</b> 1.1 — July 2026</div>
+    </div>
+    <p class="head-dps"><b>Designated Premises Supervisor — Tony Jacobs.</b> He does not have to be on site, but he must be notified of every event, and he has to be satisfied that everybody working on that event has been trained. There will always be a trained supervisor on duty at every event, and that supervisor has the final say.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- WHERE WE SERVE -->
+  <section id="spaces">
+    <p class="eyebrow">Our premises</p>
+    <h2>Three spaces. Alcohol at events only.</h2>
+    <p class="sub">Two of these three are places residents sit in every day of the week. The rules change the moment we open a bar in them.</p>
+    <div class="spaces">
+      <div class="space">
+        <h3>The Club</h3>
+        <p class="day"><span>Day to day</span> Café and residents' work area. <b>No alcohol sold.</b> Residents and children are permitted to use the area.</p>
+        <p class="ev"><span>Event nights</span> Residents' parties, screenings and similar. Residents might pay for the alcohol, or we serve it.</p>
+        <p class="fut">Residents and children use this space daily. The rules change the moment we open a bar in it.</p>
+      </div>
+      <div class="space">
+        <h3>West Lounge</h3>
+        <p class="day"><span>Day to day</span> Residents use it to socialise or watch the screen during the daytime. <b>No alcohol sold.</b></p>
+        <p class="ev"><span>Event nights</span> Parties, screenings and similar. Residents might pay for the alcohol, or we serve it.</p>
+        <p class="fut">Film screenings carry a condition of their own — see <a href="#p7" class="xref" data-tab="t7">module 07, Children &amp; screenings</a>.</p>
+      </div>
+      <div class="space">
+        <h3>The Podium</h3>
+        <p class="day"><span>Day to day</span> Open to all residents. Outdoors, overlooked by flats on every side.</p>
+        <p class="ev"><span>Event nights</span> Parties and summer BBQs. Residents might pay for the alcohol, or we serve it. The licensed area and its boundary must be set before service starts.</p>
+        <p class="fut">Noise, glass and dispersal are the live risks. Residents are directly above you.</p>
+      </div>
+    </div>
+    <div class="pull stop" style="margin-top:18px">
+      <strong>No alcohol for a non-authorised event</strong>
+      Not for a resident at lunchtime in the café. Not for leftovers after an event. Not because somebody asks nicely, and not because they live here. Alcohol can only be served at an authorised event, with the bar or drinks service officially open.
+      <br><br>If you are not certain that tonight is an authorised event, the answer is no. Ask the supervisor on duty.
+    </div>
+    <div class="pull">
+      <strong>Free food, paid alcohol — and the trap in that</strong>
+      We give the food away and residents pay for the drinks, or we serve the drinks ourselves. The alcohol is the licensable part, so all of these rules attach to it and none of them attach to the buffet. And if an event ever includes a welcome drink, <b>that drink is still a sale of alcohol</b> — it still needs an age check, and it still can't go to an under-18.
+      </div>
+      <div class="pull stop">
+        <strong>"We're serving it, so it's free" is not a way out</strong>
+        Where we provide the drinks rather than charge for them, anything paid for by the resident in any form — a ticket, an event charge, a service charge — makes it a sale in law. And even where a drink is genuinely free with nothing paid at all, <b>an under-18 still must not be drinking alcohol on these premises</b>, and letting them is an offence in itself.
+        <br><br>So the simple rule, and our policy: <b>treat every drink you hand over as a sale.</b> Same age check, same refusal, same log entry, whether money changes hands or not. <b>No excuses.</b>
+        <br><br>And one thing that <i>is</i> fine: because we are not a restaurant, an adult may buy a drink and carry it to another adult. That is normal. What we do not have is the restaurant exception that lets an adult buy beer, wine or cider for a 16 or 17 year old with a table meal.
+    </div>
+  </section>
+
+  <!-- MODULES -->
+  <section id="modules">
+    <p class="eyebrow">The training</p>
+    <h2>Eight things the law expects of you</h2>
+    <p class="sub">Work through them in order the first time. After that, use it as a lookup when something happens on shift.</p>
+
+    <div class="tabs" role="tablist" aria-label="Training modules">
+      <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true"><span class="num">01</span>Why the rules exist</button>
+      <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false"><span class="num">02</span>Who may sell</button>
+      <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false"><span class="num">03</span>Age &amp; offences</button>
+      <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false"><span class="num">04</span>Checking ID</button>
+      <button class="tab" role="tab" id="t5" aria-controls="p5" aria-selected="false"><span class="num">05</span>Saying no</button>
+      <button class="tab" role="tab" id="t6" aria-controls="p6" aria-selected="false"><span class="num">06</span>Drunk customers</button>
+      <button class="tab" role="tab" id="t7" aria-controls="p7" aria-selected="false"><span class="num">07</span>Children &amp; screenings</button>
+      <button class="tab" role="tab" id="t8" aria-controls="p8" aria-selected="false"><span class="num">08</span>Licence conditions</button>
+    </div>
+
+    <!-- 01 -->
+    <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+      <h3>01 — Licensed like a pub on the high street</h3>
+      <p class="lede">The Club, West Lounge and The Podium hold a premises licence, and we have to follow exactly the same rules as any pub. A licence is permission, not a right: it is granted against four objectives set by the Act, and it can be reviewed and taken away.</p>
+      <div class="pull stop">
+        <strong>Where we are is not a loophole</strong>
+        "It's private", "they live here", "it's a members' area", "the food's free", "it's only a residents' night" — none of that changes anything. Same licence, same rules, same consequences as the pub down the road.
+      </div>
+      <h4>The four licensing objectives — and what each one means here</h4>
+      <ol>
+        <li><b>The prevention of crime and disorder.</b> Not brawls — nobody expects a fight at a residents' screening. Here it means not serving somebody who is already drunk, logging what happens, and being able to show the police we run a tight operation.</li>
+        <li><b>Public safety.</b> Capacity, exits, glass, spills, and people getting home safely. Our building, our stairwells, our lifts.</li>
+        <li><b>The prevention of public nuisance.</b> Noise, drinks drifting outside the boundary, and how the night ends.</li>
+        <li><b>The protection of children from harm.</b> Age checks, children in areas where we are serving, and speaking up when something looks wrong.</li>
+      </ol>
+      <p>Learn these four. They are fixed by the Act — we don't get to pick which ones apply to us — and a licensing or police officer can ask you what they are. "I don't know" is itself a finding about how the premises is run.</p>
+      <h4>Objective four affects us more than most venues</h4>
+      <p>Families live in this building. Children use The Podium every day and sit in The Club and West Lounge doing homework. Two of the three spaces we serve in are somewhere children already are before we open a bar in them. That makes age checks and children-on-premises rules the sharpest end of our licence, not a formality.</p>
+      <h4>And objective three is about the people upstairs</h4>
+      <p>A Podium BBQ or a party is directly below and beside people's bedrooms. Volume, glass, and how cleanly a night ends are all licence business — a single persistent complaint from one resident can trigger a review of the whole licence.</p>
+    </div>
+
+    <!-- 02 -->
+    <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+      <h3>02 — Who is actually allowed to sell alcohol</h3>
+      <p class="lede">Every single sale of alcohol has to be made or authorised by a personal licence holder. That's the chain of authority you're standing in.</p>
+      <table>
+        <tbody>
+          <tr><th style="width:34%">Premises licence</th><td>Permission for this building to sell alcohol, at set times, in set areas, subject to conditions.</td></tr>
+          <tr><th>Designated Premises Supervisor (DPS)</th><td>The named person responsible for day-to-day supervision of alcohol sales here — Tony Jacobs. Must hold a personal licence.</td></tr>
+          <tr><th>Personal licence</th><td>Held by an individual after a qualification and DBS check. Authorises alcohol sales.</td></tr>
+          <tr><th>You</th><td>You don't need your own personal licence to serve — you sell <b>under the DPS's written authorisation</b>. That authorisation is what makes your sale lawful.</td></tr>
+        </tbody>
+      </table>
+      <div class="pull stop">
+        <strong>Selling with no authorisation is a criminal offence</strong>
+        Carrying on a licensable activity without authorisation <span class="law">s.136</span> risks an unlimited fine and up to six months' imprisonment — for the individual as well as the business.
+      </div>
+      <h4>What that means in practice</h4>
+      <ul>
+        <li>Only serve alcohol if you are on the authorised list and have completed this training. Both are recorded.</li>
+        <li><b>Only on an authorised event.</b> We don't sell alcohol day to day. If there is no event on tonight, there is no lawful sale to make — whatever the fridge has in it.</li>
+        <li>Alcohol may only be sold in the licensed areas and within the licensed hours. Not in the lobby, not in the lifts, not in the gym, not at 01:30 because a party is going well.</li>
+        <li>On the Podium, know where the licensed boundary runs <b>before</b> you open. Drinks stay inside it.</li>
+        <li>If the DPS and management are off site, the rules do not relax. There is no "acting" version of the law.</li>
+        <li><b>Staff under 18</b> may only make a sale of alcohol if it is <b>specifically approved</b> by a responsible person, for that sale <span class="law">s.153</span>. In practice at OWP: if you are under 18, you do not serve alcohol.</li>
+      </ul>
+    </div>
+
+    <!-- 03 -->
+    <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+      <h3>03 — Age: the offences, and who gets punished</h3>
+      <p class="lede">This is the one that ends careers and licences. Read the "who" column carefully — several of these land on <b>you personally</b>, not on the company.</p>
+      <table>
+        <thead><tr><th>Offence</th><th>What it is</th><th>Who is liable</th></tr></thead>
+        <tbody>
+          <tr><td><b>Selling alcohol to a child</b> <span class="law">s.146</span></td><td>Selling to anyone under 18. It doesn't matter whether you knew, only whether you took reasonable steps.</td><td><b>The person who made the sale</b> — an unlimited fine and a criminal record</td></tr>
+          <tr><td><b>Allowing the sale</b> <span class="law">s.147</span></td><td>Knowingly allowing someone else to sell to an under-18.</td><td>Supervisors, DPS, anyone who let it happen</td></tr>
+          <tr><td><b>Persistently selling</b> <span class="law">s.147A</span></td><td>Two or more unlawful sales to under-18s at the same premises within three months.</td><td>The premises — unlimited fine and suspension of alcohol sales for up to three months</td></tr>
+          <tr><td><b>Proxy purchase</b> <span class="law">s.149</span></td><td>An adult buying alcohol for an under-18. Also an offence to knowingly serve that adult.</td><td>The adult buyer — and you, if you serve knowing where the drink is going</td></tr>
+          <tr><td><b>Consumption by a child</b> <span class="law">s.150</span></td><td>An under-18 drinking alcohol on the premises, or an adult allowing it.</td><td>The child, and any adult who allows it</td></tr>
+          <tr><td><b>Delivering to a child</b> <span class="law">s.151</span></td><td>Handing alcohol to an under-18 to deliver or take away.</td><td>Whoever hands it over</td></tr>
+        </tbody>
+      </table>
+      <div class="pull">
+        <strong>The restaurant exception — know it, because it will be quoted at you</strong>
+        In a <b>restaurant</b>, a <b>16 or 17 year old</b> may drink <b>beer, wine or cider</b> with a <b>table meal</b>, in an area set aside for meals, if it is <b>bought by an adult 18 or over</b> and they are <b>accompanied</b> by that adult <span class="law">s.150(4)</span>. Not spirits. Not at the bar. Not under 16, ever.
+        <br><br>It is a real rule, so you won't be being lied to when a resident quotes it. It is just not our rule.
+      </div>
+      <div class="pull stop">
+        <strong>We are not a restaurant, so it does not apply to us</strong>
+        We serve buffets, screenings and BBQs — not table meals in an area set aside for meals. So work on this basis: <b>at our events nobody under 18 drinks alcohol.</b> Not with food, not with a parent, not at a table. Expect a resident to try it one day, usually a parent with a 16 or 17 year old at a screening. Under 18 means no drink, and the supervisor on duty will back you.
+      </div>
+      <h4>Your defence, if it ever comes to it</h4>
+      <p>The law gives a due diligence defence: that you believed the person was 18 or over and either you had taken all reasonable steps to check, or nobody could reasonably have told. In real life that defence is only as good as your evidence — the ID you actually inspected, the refusals log, the till prompt, this training record. Do it properly and you're protected. Guess, and you're not.</p>
+    </div>
+
+    <!-- 04 -->
+    <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+      <h3>04 — Checking ID properly</h3>
+      <p class="lede">Every premises licence carries a mandatory condition requiring an age verification policy. Ours is <b>Challenge 25</b>: if they look under 25, you ask. No judgement call, no exceptions, no "I'll let this one go".</p>
+      <div class="pull">
+        <strong>Know today's date. Then know the date that makes somebody 18.</strong>
+        <b>1.</b> Know today's date, and write it at the top of the refusals log when you set the bar up. &nbsp; <b>2.</b> Count back <b>18 years</b> — that gives the latest date of birth that is old enough to be served. &nbsp; <b>3.</b> Count back <b>25 years</b> — born after that date, ask for ID every time, whoever they are.
+        <br><br>Both dates move every single day. Work them out for the date of your event and write them where the whole bar team can see them.
+      </div>
+      <h4>ID we accept</h4>
+      <ul>
+        <li>Passport</li>
+        <li>Photocard driving licence</li>
+        <li>A <b>PASS</b>-accredited proof-of-age card (look for the PASS hologram)</li>
+        <li>HM Forces identity card with photo</li>
+        <li>Biometric residence permit / immigration card</li>
+        <li>National identity card issued by an EEA state</li>
+      </ul>
+      <p>The mandatory condition requires photo ID showing a <b>date of birth</b> and carrying a <b>holographic mark or an ultraviolet feature</b>. Digital ID is only acceptable where our own policy says so — if you're not certain it's on our list, treat it as no ID.</p>
+      <div class="split">
+        <div class="yes">
+          <h4>Do</h4>
+          <ul style="margin-bottom:0">
+            <li>Take the card in your hand and look at it in decent light</li>
+            <li>Read the date of birth and do the maths — never read the age off somebody's face</li>
+            <li>Check the photo is them: ears, nose, bone structure, not the haircut</li>
+            <li>Feel for edges that have been split, letters that don't line up, a laminate that's lifting</li>
+            <li>Tilt it for the hologram</li>
+            <li>Serve pleasantly once it checks out. Being thanked for being thorough is normal</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h4>Don't</h4>
+          <ul style="margin-bottom:0">
+            <li>Accept a photo or screenshot of an ID on a phone</li>
+            <li>Accept a photocopy, a bank card, a student card, or a gym pass</li>
+            <li>Accept "my mate's got my ID upstairs"</li>
+            <li>Let a group hold you up — check the person buying, and anyone the drink is clearly for</li>
+            <li>Skip the check because you served them last week</li>
+            <li>Accept an ID somebody else in the group hands you</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pull stop">
+        <strong>The OWP trap: familiarity</strong>
+        You will serve the same few hundred residents and their families over and over. You'll know faces, names, flat numbers. The under-18 who gets served in a place like this is almost never a stranger with a fake ID — it's someone's teenager whose face you recognise from the lift. Recognising somebody is not evidence of their age.
+      </div>
+      <h4>If the ID looks fake or isn't theirs</h4>
+      <ol>
+        <li>Refuse the sale, calmly. You don't need to prove anything or accuse anyone.</li>
+        <li>Don't snatch, wrestle or chase. Don't get into a debate.</li>
+        <li>Log it in the refusals register with a description, and tell your supervisor and the DPS the same shift.</li>
+        <li>If they become abusive or refuse to leave, follow the venue's incident procedure and call for support.</li>
+      </ol>
+    </div>
+
+    <!-- 05 -->
+    <div class="panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden>
+      <h3>05 — Saying no, and writing it down</h3>
+      <p class="lede">You are always allowed to refuse a sale. There is no legal right to be served. Refusing is the safe answer — you can never be prosecuted for a sale you didn't make.</p>
+      <h4>A refusal that doesn't turn into an argument</h4>
+      <ul>
+        <li>Be quick and matter of fact. Hesitating invites negotiation.</li>
+        <li>Put it on the rule, not the person: "I can't serve this without ID — Challenge 25, it's a condition of our licence."</li>
+        <li>Offer something instead: a soft drink, food, tap water, "come back with your passport and it's no problem".</li>
+        <li>Say it once, then stop explaining. Repeating the same line calmly beats a better argument.</li>
+        <li>Hand off to a supervisor if it escalates. That's not failing.</li>
+        <li>Tell the rest of the bar team, so the same person doesn't get served two feet away thirty seconds later.</li>
+      </ul>
+      <div class="pull">
+        <strong>The refusals register is our best evidence</strong>
+        A log full of entries proves a premises that checks. An empty log tells a licensing officer that nobody ever asked anybody anything. Fill it in <b>at the time</b>, not at the end of the night.
+      </div>
+      <h4>What goes in the log, every time</h4>
+      <table>
+        <thead><tr><th>Field</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Date &amp; time</td><td>Written when it happens</td></tr>
+          <tr><td>Description</td><td>Sex, approximate age, height, clothing, hair — no names needed</td></tr>
+          <tr><td>What was asked for</td><td>"Two bottled beers"</td></tr>
+          <tr><td>Reason for refusal</td><td>No ID / ID appeared altered / believed under 18 / appeared drunk / believed buying for a minor</td></tr>
+          <tr><td>Action taken</td><td>Refused, offered soft drink, left without incident / supervisor attended</td></tr>
+          <tr><td>Your name &amp; signature</td><td>Yours, not "bar team"</td></tr>
+        </tbody>
+      </table>
+      <p>Also log: any incident, any ejection, any first aid, anything the police attend. If an officer asks for the log, produce it and tell the DPS immediately.</p>
+    </div>
+
+    <!-- 06 -->
+    <div class="panel" role="tabpanel" id="p6" aria-labelledby="t6" hidden>
+      <h3>06 — Drunk customers</h3>
+      <p class="lede">Serving somebody who is already drunk is a separate criminal offence from anything to do with age, and it's the one most often ignored. It applies even to a resident, even at a private function, even when they're the reason the bar is busy.</p>
+      <table>
+        <tbody>
+          <tr><th style="width:38%">Selling to a drunk person <span class="law">s.141</span></th><td>Selling or attempting to sell alcohol to somebody who is drunk, or allowing it. A fine — and it's your sale.</td></tr>
+          <tr><th>Buying for a drunk person <span class="law">s.142</span></th><td>Obtaining or attempting to obtain alcohol for somebody who is drunk. That covers the friend at the bar buying the round.</td></tr>
+          <tr><th>Failure to leave <span class="law">s.143</span></th><td>A person who is drunk or disorderly commits an offence if they don't leave when asked, or try to enter.</td></tr>
+          <tr><th>Allowing disorderly conduct <span class="law">s.140</span></th><td>Knowingly allowing disorderly conduct on the premises.</td></tr>
+        </tbody>
+      </table>
+      <h4>What you're looking for</h4>
+      <ul>
+        <li>Slurred, repetitive or unusually loud speech</li>
+        <li>Unsteady on their feet, swaying, using furniture to navigate, difficulty with stairs or the lift</li>
+        <li>Can't focus, glazed, struggling to pay or handle a card</li>
+        <li>Fumbling, spilling, dropping glasses</li>
+        <li>Personality change — aggression, tearfulness, over-familiarity, no sense of volume</li>
+        <li>Ordering doubles at pace, or a round no group could reasonably drink</li>
+      </ul>
+      <div class="pull">
+        <strong>How to cut someone off in a building they live in</strong>
+        Quietly, one to one, no audience: "I can't serve you any more tonight — but let me get you some water and something to eat." Never announce it across the bar. Never make it about their character. Then tell your supervisor and log it, because the next person on the bar needs to know.
+      </div>
+      <p>Keep an eye on where they go next. If somebody is very drunk or unwell, their welfare is the priority — get help, don't just move them off the premises. Free drinking water must be available on request; use it.</p>
+    </div>
+
+    <!-- 07 -->
+    <div class="panel" role="tabpanel" id="p7" aria-labelledby="t7" hidden>
+      <h3>07 — Children on the premises, and screening nights</h3>
+      <p class="lede">Children being present is normal here — they're in The Club and West Lounge every day. The catch is that the rules change underneath them the moment a space turns into an event with a bar.</p>
+      <div class="pull">
+        <strong>The room changes character, and so do the rules</strong>
+        The Club at 4pm is a café — not premises being used primarily for the supply of alcohol, so an under-16 can sit there alone doing homework quite lawfully. The same room at 8pm on a residents' night, with a bar running, <b>is</b>. The law doesn't care that it's the same carpet. Walk the room and deal with unaccompanied under-16s <b>before</b> the bar opens, not once you're pouring.
+      </div>
+      <ul>
+        <li><b>Unaccompanied under-16s</b> must not be on premises being used <b>exclusively or primarily</b> for the supply of alcohol <span class="law">s.145</span>. During a drinks-led event, an under-16 needs an adult 18 or over with them.</li>
+        <li>Between <b>midnight and 05:00</b>, an accompanied child must not be on premises open for the supply of alcohol for consumption there.</li>
+        <li><b>Sending a child to buy alcohol</b> <span class="law">s.152</span> is an offence — including a parent sending their child to the bar with a card and an order.</li>
+        <li>Watch the table, not just the till. If a round is bought by an adult and lands in front of a 15-year-old, that's an offence in progress and it's yours to stop.</li>
+        <li>Children in areas that aren't primarily for alcohol — a family event on The Podium, a residents' film night — are fine. The alcohol rules still apply to who drinks.</li>
+      </ul>
+      <div class="pull stop">
+        <strong>Safeguarding overrides everything</strong>
+        If you're worried about a child — unsupervised late, distressed, with an adult who doesn't seem to be theirs, being given alcohol — tell your supervisor and the DPS straight away. Don't investigate it yourself and don't decide it's not your business. Protecting children from harm is one of the four objectives our licence stands on.
+      </div>
+      <p>Our own premises licence may add conditions on children beyond the statutory minimum — for example restricted areas or times. Read the conditions once the licence is issued and ask if anything is unclear.</p>
+
+      <h4>Screening nights: the 3 × 8 metre screen brings its own condition</h4>
+      <p>Showing a film is regulated entertainment in its own right, and any licence authorising it carries a mandatory condition about children that has nothing to do with alcohol:</p>
+      <div class="pull stop">
+        <strong>Admission must match the film's age classification</strong>
+        Where a film is shown, admission of children has to be restricted in accordance with the classification given to that film. A 15 means nobody under 15 comes in — <b>a parent saying it's fine does not change that.</b> Know the certificate before the night, put it on the invitation, and check ages at the door rather than halfway through.
+      </div>
+      <ul>
+        <li><b>Lights down means you can't see who's drinking what.</b> All your age checks have to happen at the bar, at the point of sale. A dark room is a reason to be stricter, not more relaxed.</li>
+        <li>Keep the bar area lit well enough to actually read a date of birth off a card.</li>
+        <li>A family film afternoon and a residents' drinks night are two different events. <b>We have to choose which it is</b> — and say so on the invitation.</li>
+        <li>Screening rights for the film itself are a separate issue from the premises licence — but they land on the same event, so check before anything goes on that screen.</li>
+      </ul>
+      <p><b>Screenings in West Lounge are our highest-risk event:</b> a dark room, a buffet, families, and a bar. Everything else on our licence gets tested on those nights.</p>
+    </div>
+
+    <!-- 08 -->
+    <div class="panel" role="tabpanel" id="p8" aria-labelledby="t8" hidden>
+      <h3>08 — The conditions we operate under</h3>
+      <p class="lede">Some conditions come from the licence itself; some are mandatory on every premises licence in England and Wales. Breaching any of them is a breach of the licence.</p>
+      <h4>Mandatory conditions — these apply to us whatever the licence says</h4>
+      <ul>
+        <li><b>No irresponsible promotions.</b> No drinking games or rewards for drinking quickly, no unlimited or unspecified quantities for a fixed price, no promotions tied to sporting events that encourage bad behaviour, nothing that appeals to under-18s.</li>
+        <li><b>No dispensing alcohol directly into the mouth</b> — no shot funnels, no "head back" pouring, unless it's for someone unable to drink unaided.</li>
+        <li><b>Free potable water</b> must be available to customers on request.</li>
+        <li><b>An age verification policy</b> requiring photo ID with date of birth and a hologram or UV feature. The DPS must ensure staff are trained on it — that's this session, and it's recorded.</li>
+        <li><b>Smaller measures</b> must be available and customers made aware of them: half a pint of beer or cider, a 125ml glass of wine, a 25ml or 35ml spirit. Don't only offer the large one.</li>
+        <li><b>No sales below the permitted price</b> (broadly, duty plus VAT).</li>
+      </ul>
+      <h4>Legal measures — get these wrong and it's a weights and measures offence</h4>
+      <table>
+        <thead><tr><th>Drink</th><th>Lawful quantities</th></tr></thead>
+        <tbody>
+          <tr><td>Draught beer &amp; cider</td><td>⅓ pint, ½ pint, or multiples of ½ pint</td></tr>
+          <tr><td>Still wine by the glass</td><td>125ml, 175ml, 250ml, or multiples</td></tr>
+          <tr><td>Gin, rum, vodka, whisky</td><td>25ml or 35ml, or multiples of that same measure</td></tr>
+        </tbody>
+      </table>
+      <p>Use the stamped glass or the measure. Never free-pour spirits. Don't mix 25ml and 35ml on the same site.</p>
+      <h4>The conditions the police have put on our licence</h4>
+      <p>These three are specific to us. They are not general good practice — they are conditions on the licence, so failing to do them is a breach of the licence in exactly the same way as serving an under-18.</p>
+      <ol class="policecond">
+        <li><b>A guest register at every event.</b> All guests on event days must sign in, recording <b>full name and contact details</b>.</li>
+        <li><b>A risk assessment for SIA door supervisors.</b> At all times, the premises licence holder will conduct a risk assessment to determine the number of SIA door supervisors required. The assessment must be <b>retained on site for 12 months</b> and made available to the local authority or an officer of the Metropolitan Police Service <b>on request</b>.</li>
+        <li><b>The Lounge closes at midnight</b>, Monday to Sunday.</li>
+      </ol>
+      <div class="pull">
+        <strong>Every event, not just the big ones</strong>
+        A risk assessment is needed before <b>every</b> event — an OPDC lunch as much as a residents' party. We have a simple sheet that builds the assessment once you fill in a few facts, so there is no reason to skip it.
+        <br><br>We can be checked at any time, and we keep every assessment for <b>a year after the event</b>. An assessment written up afterwards is worth nothing: do it before, and file it.
+      </div>
+      <div class="pull stop">
+        <strong>The register is a legal record, so treat it like one</strong>
+        Sign guests in <b>as they arrive</b>, not from memory at the end. Names must be legible and contact details real. Because it holds personal data, it is kept securely, used only for licensing and safety, and not left lying on the bar for the next guest to read.
+      </div>
+      <p>Two practical consequences of the midnight condition: the Lounge closes at midnight whatever the mood in the room, and it lines up with the rule that even an accompanied child must not be on premises open for the supply of alcohol between midnight and 05:00. Plan the end of the night backwards from midnight, not towards it.</p>
+
+      <h4>Where the licensed area ends — the Podium problem</h4>
+      <p>Outdoor events make the boundary of the licensed area a live question rather than a line on a plan. Before service starts you need to know where it runs, and drinks have to stay inside it.</p>
+      <ul>
+        <li>A resident wandering back towards the lifts with a bottle is taking alcohol away from the premises. That's an <b>off-sale</b>, and off-sales are only lawful if our licence permits them.</li>
+        <li>If off-sales aren't permitted, drinks finish inside the licensed area. Say it at the start of the event, not at the end.</li>
+        <li>Glass outdoors, near a pool of residents including children, is a public safety issue as much as a housekeeping one.</li>
+        <li>Volume and dispersal: flats overlook the Podium on every side. How quietly a night ends is licence business, and one persistent complainant can trigger a review.</li>
+      </ul>
+
+      <h4>Also on our licence — check the document when it's issued</h4>
+      <ul>
+        <li>Permitted hours for alcohol sales, and hours for regulated entertainment including film</li>
+        <li>Which areas are licensed, whether the Podium is included, and whether off-sales are permitted at all</li>
+        <li>CCTV, incident log, refusals log and staff training record requirements</li>
+        <li>Conditions on noise, outdoor use and dispersal</li>
+        <li>Anything specific to screenings or to children in The Club and West Lounge</li>
+      </ul>
+      <div class="pull stop">
+        <strong>We have worked hard to get this licence</strong>
+        Let's not be silly, or so friendly, that we make the one mistake that loses it.
+        <br><br><b>What getting it wrong actually costs:</b>
+        An unlimited fine and a criminal record for the individual server. An unlimited fine for the company. Suspension of alcohol sales for up to three months after two under-18 sales in three months. A licence review triggered by police, environmental health or a single resident — which can add conditions, cut our hours, remove the DPS, or revoke the licence altogether. A closed bar affects every resident in this building.
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz">
+    <p class="eyebrow">Assessment</p>
+    <h2>Ten things that will happen on a shift</h2>
+    <p class="sub">Real situations for this venue. Pick an answer and you'll get the reasoning either way. Eight out of ten is a pass; anything less, go round again.</p>
+    <div class="quiz">
+      <div id="quizLive" aria-live="polite">
+        <p class="qcount" id="qcount">Question 1 of 10</p>
+        <div class="qbar"><i id="qbar"></i></div>
+        <p class="qtext" id="qtext"></p>
+        <div class="opts" id="opts"></div>
+        <div class="feedback" id="fb"></div>
+        <div style="margin-top:20px"><button id="nextBtn" style="display:none">Next question</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCE -->
+  <section id="reference">
+    <p class="eyebrow">Keep these open</p>
+    <h2>Quick reference</h2>
+
+    <details>
+      <summary>The 30-second version — pin this behind the bar</summary>
+      <div class="body">
+        <ol>
+          <li>Look under 25? <b>Ask for ID.</b> Every time, no matter who it is.</li>
+          <li>Real photo ID only — passport, photocard licence, PASS card. Not a phone photo.</li>
+          <li>Read the date of birth. Do the maths. Under 18 means no.</li>
+          <li>Who's the drink for? If it's heading to a minor, don't sell it.</li>
+          <li>Already drunk? Don't serve. Water, food, quiet word.</li>
+          <li>Refuse first, ask questions after. You can't be prosecuted for a sale you didn't make.</li>
+          <li>Write it in the refusals log at the time.</li>
+          <li>Right measure, right glass, no free-pouring.</li>
+          <li>Alcohol only in licensed areas, only within licensed hours.</li>
+          <li>Anything odd — under-18s, safeguarding, police, fake ID — tell the DPS the same shift.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details>
+      <summary>Lines that work when you're refusing</summary>
+      <div class="body">
+        <ul>
+          <li>"I can't serve that without ID — it's a condition of our licence, we ask everyone who looks under 25."</li>
+          <li>"I know, but if I get it wrong it's my job and a criminal record. Bring your passport down and it's sorted."</li>
+          <li>"I'm not able to serve you any more tonight. Let me get you a water and something to eat."</li>
+          <li>"I can't take a photo of an ID, I need the card itself."</li>
+          <li>"That's fine for you — but I can't serve the second one while she hasn't got ID."</li>
+          <li>"We can only sell alcohol on event nights, so I can't do that today — but the next residents' night is [date]."</li>
+          <li>"Sorry, drinks need to stay this side of the doors tonight — I can't let it leave the licensed area."</li>
+          <li>"It's a 15, so I can't let him in even with you — that one isn't my call, it's on the licence."</li>
+          <li>"My manager will say exactly the same thing, but I'll get them for you."</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>Before every event — and the records we keep</summary>
+      <div class="body">
+        <h4 style="margin-top:4px">Before every event</h4>
+        <ul>
+          <li>Confirm the event is authorised and that we are within the licensed hours.</li>
+          <li>Confirm the DPS has been notified, and that everybody serving has been trained.</li>
+          <li>Name the trained supervisor on duty. They have the final say on any refusal.</li>
+          <li>Brief the team on the licensed boundary — especially on the Podium — and whether drinks may leave it.</li>
+          <li><b>Complete the SIA risk assessment</b> and file it — every event, no exceptions. Kept on site for 12 months.</li>
+          <li><b>Set up the guest register</b> so every guest signs in with full name and contact details as they arrive.</li>
+          <li>Check the refusals log is out, on the bar, with a pen.</li>
+          <li>Walk the room and deal with any unaccompanied under-16s before the bar opens.</li>
+          <li>For screenings: confirm the film's age classification, and who is checking ages at the door.</li>
+        </ul>
+        <h4>Records to keep</h4>
+        <ul>
+          <li>A signed training record for every person serving, with the date and the version of this material.</li>
+          <li>The DPS's written authorisation list — who may serve alcohol.</li>
+          <li>The refusals and incident log, filled in at the time.</li>
+          <li>Evidence of refresher training before events, given how rarely we serve.</li>
+          <li><b>The SIA risk assessment for every event, kept for 12 months</b> and producible to the council or the Met on request.</li>
+          <li><b>The guest register for every event</b>, held securely.</li>
+        </ul>
+        <p>Keep all of it with the licence. It is the first thing asked for at a review, and it is what proves we took reasonable steps.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Words you'll hear from licensing officers</summary>
+      <div class="body">
+        <table>
+          <tbody>
+            <tr><th style="width:30%">Responsible authority</th><td>Bodies who can object to or trigger a review of a licence — police, fire, environmental health, licensing authority, trading standards, safeguarding.</td></tr>
+            <tr><th>Review</th><td>A hearing that can add conditions, cut hours, remove the DPS, suspend or revoke the licence.</td></tr>
+            <tr><th>Test purchase</th><td>An under-18 volunteer sent in with trading standards or police to see whether you ask. Assume it will happen.</td></tr>
+            <tr><th>Temporary Event Notice (TEN)</th><td>Short-notice permission for an event outside the terms of the licence. Not a way round conditions.</td></tr>
+            <tr><th>Off-sales</th><td>Alcohol taken away to drink elsewhere. Only if our licence permits it.</td></tr>
+            <tr><th>Due diligence</th><td>Your defence: the checks you actually made and can prove.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <!-- SIGN OFF -->
+  <section id="signoff">
+    <div class="signoff">
+      <p class="eyebrow" style="color:#9FB3C2">Training record</p>
+      <h2>Sign it off</h2>
+      <p class="sub">Fill this in and print or save it as a PDF. The DPS has to keep a training record for every person authorised to sell alcohol — this is that record.</p>
+      <div class="sign-grid">
+        <div><label for="nm">Full name</label><input type="text" id="nm" placeholder="Your name"></div>
+        <div><label for="rl">Role</label><input type="text" id="rl" placeholder="e.g. bar / events"></div>
+        <div><label for="dt">Date completed</label><input type="date" id="dt"></div>
+        <div><label for="sc">Quiz score</label><input type="text" id="sc" placeholder="/10"></div>
+      </div>
+      <p style="font-size:15px;color:#C3D2DD;max-width:70ch;margin-top:20px">I confirm I have completed version 1.1 of this training, I understand the age verification policy and my personal legal responsibilities when selling alcohol, and I know that if I am unsure I will refuse the sale and speak to the DPS.</p>
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+        <button onclick="window.print()">Print / save as PDF</button>
+      </div>
+      <p style="font-size:14px;color:#9FB3C2;margin-top:22px;border-top:1px solid #2C3E4C;padding-top:14px">Signature ..................................................... &nbsp;&nbsp; Countersigned (DPS) .....................................................</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Training material for One West Point staff. Covers the Licensing Act 2003 as it applies in England &amp; Wales, together with the mandatory licensing conditions and weights and measures rules for alcohol. It is a training aid, not legal advice, and it does not replace the conditions on our own premises licence — read those alongside it and take the licensing authority's or a licensing solicitor's view on anything contentious. Version 1.1 — July 2026.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var today=new Date();
+  var dt=document.getElementById('dt');
+  if(dt){dt.value=today.toISOString().slice(0,10);}
+
+  /* ---- tabs ---- */
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function select(i){
+    tabs.forEach(function(t,n){
+      var p=document.getElementById(t.getAttribute('aria-controls'));
+      var on=(n===i);
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+      p.hidden=!on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(i);});
+    t.addEventListener('keydown',function(e){
+      var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+      if(!d)return;
+      e.preventDefault();
+      var n=(i+d+tabs.length)%tabs.length;
+      select(n);tabs[n].focus();
+    });
+  });
+  select(0);
+
+  /* cross-reference links that open the right module tab */
+  [].slice.call(document.querySelectorAll('a.xref')).forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('data-tab');
+      for(var n=0;n<tabs.length;n++){
+        if(tabs[n].id===id){e.preventDefault();select(n);tabs[n].focus();
+          document.getElementById('modules').scrollIntoView();break;}
+      }
+    });
+  });
+
+  /* ---- quiz ---- */
+  var Q=[
+    {q:"It's Wednesday lunchtime. The Club is running as the café and a resident asks for a glass of wine with her sandwich. She's clearly over 30 and you've served her coffee all week.",
+     o:["Serve it — she's obviously over 18","Refuse — we only sell alcohol on authorised events, and today isn't one","Serve it and put it through as a soft drink","Check with a colleague whether there's any wine open"],
+     a:1,
+     e:"Age was never the issue. We don't sell alcohol day to day, so on a Wednesday lunchtime there is no lawful sale to make — the licensed activity isn't running. Her age, her being a resident, and how nice she is make no difference. Point her at the café menu and tell her when the next residents' night is."},
+
+    {q:"Screening night in West Lounge. We've laid on the buffet, residents pay for drinks. A resident's 17-year-old son has a plate of food and is standing at the back watching the film. His mum comes to the bar and buys him a beer.",
+     o:["Lawful — 17, beer, and there's food","Lawful because his mother bought it","Lawful if he sits down with the plate","Refuse the beer — a buffet plate standing up isn't a table meal"],
+     a:3,
+     e:"The s.150(4) exception needs a table meal in an area set aside for meals. A buffet plate at a screening isn't that, so the exception doesn't apply and the beer would be an offence. At our events — buffets, screenings, BBQs — assume the exception never applies. Under 18 means no."},
+
+    {q:"Podium summer BBQ. A guest picks up his bottle of beer and heads for the lifts to take it back up to the flat.",
+     o:["Fine — he's a resident, he lives here","Fine as long as he's over 18","Stop him: drinks stay inside the licensed area unless our licence permits off-sales","Fine if he pours it into a plastic cup first"],
+     a:2,
+     e:"Taking alcohol away from the premises is an off-sale, and off-sales are only lawful if our licence authorises them. Being a resident is irrelevant — his flat isn't the licensed area. Know where the Podium boundary runs before you open, and say it at the start of the event rather than arguing about it at the end."},
+
+    {q:"Film night in West Lounge and the film is a 15. A resident arrives with her 13-year-old and says she's happy for him to watch it, she's his mother and she'll sit with him.",
+     o:["Refuse admission — the classification condition isn't a parental choice","Let him in — parental consent covers it","Let him in but don't serve either of them alcohol","Let him in if he sits at the back"],
+     a:0,
+     e:"Where a film is shown, admission of children must be restricted in line with the film's age classification. That's a mandatory condition on the licence, not a house rule, so a parent can't waive it. Know the certificate in advance, put it on the invitation, and check at the door."},
+
+    {q:"6:45pm in The Club. A 15-year-old resident is at a table doing homework, on her own, as you set up the bar for a residents' night starting at 7:30.",
+     o:["Leave her — she's a resident and she was there first","Nothing to do: the rule only applies to under-14s","Sort it before the bar opens — once it's an alcohol-led event she can't be there unaccompanied","Only a problem after midnight"],
+     a:2,
+     e:"At 4pm The Club is a café and she's perfectly entitled to sit there alone. Once the space is being used primarily for the supply of alcohol, unaccompanied under-16s must not be on the premises. Walk the room and deal with it before you start serving — a quiet word early beats moving somebody on mid-event."},
+
+    {q:"Marketing suggests the next residents' night is ticketed at £15, including a welcome glass of prosecco on arrival.",
+     o:["Fine — it's included, so it isn't a sale","It's still a sale of alcohol: every glass needs an age check and none can go to an under-18","Fine as long as we don't advertise the prosecco","Fine because the food is free too"],
+     a:1,
+     e:"Alcohol supplied as part of a ticket price is still a sale. Every welcome glass needs the same age check as anything bought at the bar, and handing one to a 17-year-old on arrival is the same offence as selling it to them. Trays of drinks by the door are how this goes wrong. You need to check at the point you hand the drink over."},
+
+    {q:"Podium BBQ. A resident is slurring, unsteady and has just knocked over a table. His wife comes to the bar and orders two more beers.",
+     o:["Serve her — she's fine and it's her money","Serve one beer and keep an eye on him","Refuse him but serve her, she's an adult","Refuse both, offer water and food, tell your supervisor and log it"],
+     a:3,
+     e:"Selling to a drunk person is an offence under s.141, and obtaining alcohol for a drunk person is an offence under s.142 — so serving his wife doesn't get either of you off the hook. It being a private residents' event changes nothing. Water, food, quiet word away from the crowd, log it, and tell the next person on the bar."},
+
+    {q:"Residents' night in The Club. A resident who looks about twenty comes to the bar in flip-flops with no wallet and no ID — she's come straight down from her flat and offers to charge it to her account.",
+     o:["Serve her — she's on the resident list, so her age is on file","Serve her and check her ID next time","Refuse until she brings photo ID down","Serve her if a neighbour confirms she's over 18"],
+     a:2,
+     e:"Challenge 25 means photo ID, and being a resident isn't proof of age — a resident record isn't the ID our licence requires you to inspect. The lift takes thirty seconds. Say it warmly, put it on the rule rather than on her, and hold the line: this exact situation is how a place like ours ends up serving somebody's teenager."},
+
+    {q:"The screening has finished, the bar is closing and there's most of a case of wine left. A resident offers to buy two bottles to take upstairs.",
+     o:["Refuse: the event is over and it would be an off-sale we may not be licensed for","Sell them — better than it going to waste","Sell them at cost price","Give them away instead, so it isn't a sale"],
+     a:0,
+     e:"Two problems at once. Selling after the authorised event and its licensed hours isn't a lawful sale, and taking bottles away is an off-sale we may not be permitted to make. Giving it away doesn't help either — supplying alcohol is still a licensable activity. Leftovers go back into stock, counted."},
+
+    {q:"22:45 at a Podium party. Music is loud, the crowd has drifted towards the far side, and a couple of people are wandering off with glasses. Flats are lit up all around you.",
+     o:["Leave it — the licence lets us serve until later, so we're fine","Bring the volume down, keep drinks inside the boundary, and start the dispersal plan","Nothing to do with the bar staff — that's a management problem","Move everyone indoors and carry on serving"],
+     a:1,
+     e:"Being within our permitted hours doesn't mean we're meeting the licensing objectives. Prevention of public nuisance is one of the four, and residents are directly above you — noise and a messy ending are exactly what generates the complaint that triggers a licence review. How quietly a night finishes is part of the job."}
+  ];
+
+  var i=0,score=0,answered=false;
+  var qt=document.getElementById('qtext'),op=document.getElementById('opts'),fb=document.getElementById('fb'),
+      nb=document.getElementById('nextBtn'),qc=document.getElementById('qcount'),qb=document.getElementById('qbar');
+
+  function render(){
+    answered=false;
+    qc.textContent='Question '+(i+1)+' of '+Q.length;
+    qb.style.width=(i/Q.length*100)+'%';
+    qt.textContent=Q[i].q;
+    fb.className='feedback';fb.innerHTML='';
+    nb.style.display='none';
+    op.innerHTML='';
+    Q[i].o.forEach(function(text,n){
+      var b=document.createElement('button');
+      b.className='opt';b.type='button';b.textContent=text;
+      b.addEventListener('click',function(){pick(n);});
+      op.appendChild(b);
+    });
+  }
+
+  function pick(n){
+    if(answered)return;
+    answered=true;
+    var right=(n===Q[i].a);
+    if(right)score++;
+    var btns=op.querySelectorAll('.opt');
+    btns.forEach(function(b,k){
+      b.disabled=true;
+      if(k===Q[i].a)b.classList.add('correct');
+      else if(k===n)b.classList.add('wrong');
+    });
+    fb.className='feedback show '+(right?'right':'wrongfb');
+    fb.innerHTML='<b>'+(right?'Correct':'Not this one')+'</b>'+Q[i].e;
+    nb.style.display='inline-block';
+    nb.textContent=(i===Q.length-1)?'See my score':'Next question';
+    nb.focus();
+  }
+
+  nb.addEventListener('click',function(){
+    if(i===Q.length-1){finish();}else{i++;render();}
+  });
+
+  function finish(){
+    var band,advice;
+    if(score===10){band='Faultless';advice='You can be trusted on the bar on your own. Keep the log up and stay suspicious of familiar faces.';}
+    else if(score>=8){band='Pass';advice='Solid. Go back over the ones you missed — the details you dropped are exactly the ones an officer will test.';}
+    else if(score>=5){band='Not yet';advice='Halfway there, which is not far enough to be taking money for alcohol. Re-read modules 03 to 06 and run it again.';}
+    else{band='Start again';advice='Work through the modules properly with the DPS before your next shift on the bar. This is the stuff that carries a criminal record.';}
+    document.getElementById('quizLive').innerHTML=
+      '<div class="scorecard"><p class="qcount">Your score</p><div class="big">'+score+'/10</div>'+
+      '<p class="band">'+band+'</p><p style="max-width:52ch;margin:0 auto 22px;color:#3D5060">'+advice+'</p>'+
+      '<button id="again">Run it again</button> <button class="ghost" id="toSign">Go to the sign-off sheet</button></div>';
+    document.getElementById('again').addEventListener('click',function(){
+      i=0;score=0;
+      document.getElementById('quizLive').innerHTML=
+        '<p class="qcount" id="qcount"></p><div class="qbar"><i id="qbar"></i></div><p class="qtext" id="qtext"></p>'+
+        '<div class="opts" id="opts"></div><div class="feedback" id="fb"></div>'+
+        '<div style="margin-top:20px"><button id="nextBtn" style="display:none">Next question</button></div>';
+      qt=document.getElementById('qtext');op=document.getElementById('opts');fb=document.getElementById('fb');
+      nb=document.getElementById('nextBtn');qc=document.getElementById('qcount');qb=document.getElementById('qbar');
+      nb.addEventListener('click',function(){if(i===Q.length-1){finish();}else{i++;render();}});
+      render();
+    });
+    document.getElementById('toSign').addEventListener('click',function(){
+      var sc=document.getElementById('sc');sc.value=score+'/10';
+      document.getElementById('signoff').scrollIntoView();
+      sc.focus();
+    });
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
