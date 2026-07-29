@@ -69,6 +69,16 @@ ol.policecond{counter-reset:pc;list-style:none;padding-left:0;margin:14px 0 18px
 ol.policecond li{counter-increment:pc;position:relative;padding:14px 18px 14px 52px;margin-bottom:10px;background:#F6F9FB;border:1px solid var(--line);border-left:4px solid var(--ale);border-radius:var(--radius)}
 ol.policecond li::before{content:counter(pc);position:absolute;left:16px;top:13px;width:24px;height:24px;border-radius:50%;background:var(--ale);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-align:center;line-height:24px}
 
+.declare{display:flex;gap:12px;align-items:flex-start;max-width:74ch;margin-top:22px;font-size:15px;color:#C3D2DD;text-transform:none;letter-spacing:0;font-weight:400;cursor:pointer}
+.declare input{width:22px;height:22px;flex:0 0 22px;margin-top:2px;accent-color:var(--ale)}
+button.ghost.light{color:#fff;border-color:#2C3E4C}
+button.ghost.light:hover{background:#25384A}
+button:disabled{opacity:.55;cursor:not-allowed}
+#sendMsg{margin:16px 0 0;font-size:15px;font-weight:600;min-height:1.2em}
+#sendMsg.good{color:#8FD9B4}
+#sendMsg.bad{color:#F0A9A2}
+@media print{.declare input,#sendBtn,#sendMsg{display:none}.declare{color:#000}}
+
 a.xref{color:var(--ale);text-decoration:underline;text-underline-offset:2px;font-weight:600}
 a.xref:hover{color:#8F5406}
 
@@ -697,10 +707,15 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-si
         <div><label for="dt">Date completed</label><input type="date" id="dt"></div>
         <div><label for="sc">Quiz score</label><input type="text" id="sc" placeholder="/10"></div>
       </div>
-      <p style="font-size:15px;color:#C3D2DD;max-width:70ch;margin-top:20px">I confirm I have completed version 1.1 of this training, I understand the age verification policy and my personal legal responsibilities when selling alcohol, and I know that if I am unsure I will refuse the sale and speak to the DPS.</p>
-      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-        <button onclick="window.print()">Print / save as PDF</button>
+      <label class="declare" for="dec">
+        <input type="checkbox" id="dec">
+        <span>I confirm I have completed version 1.1 of this training, I understand the age verification policy and my personal legal responsibilities when selling alcohol, and I know that if I am unsure I will refuse the sale and speak to the supervisor on duty.</span>
+      </label>
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <button id="sendBtn">Submit my sign-off</button>
+        <button class="ghost light" onclick="window.print()">Print / save as PDF</button>
       </div>
+      <p id="sendMsg" role="status" aria-live="polite"></p>
       <p style="font-size:14px;color:#9FB3C2;margin-top:22px;border-top:1px solid #2C3E4C;padding-top:14px">Signature ..................................................... &nbsp;&nbsp; Countersigned (DPS) .....................................................</p>
     </div>
   </section>
@@ -875,6 +890,65 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-si
   }
 
   render();
+  /* ---- training register: send the sign-off to Supabase ---- */
+  var SB_URL = 'https://skwupxyvazqdooqqgtfj.supabase.co';
+  var SB_KEY = 'sb_publishable_2NCvAR80hvb2FeyDU50iXA_cGIrhN7a';
+  var VERSION = '1.1';
+
+  var sendBtn = document.getElementById('sendBtn');
+  var sendMsg = document.getElementById('sendMsg');
+
+  function say(txt, good){
+    sendMsg.textContent = txt;
+    sendMsg.className = good ? 'good' : 'bad';
+  }
+
+  if (sendBtn) {
+    sendBtn.addEventListener('click', function(){
+      var name = (document.getElementById('nm').value || '').trim();
+      var role = (document.getElementById('rl').value || '').trim();
+      var when = document.getElementById('dt').value;
+      var scoreRaw = (document.getElementById('sc').value || '').replace(/[^0-9]/g, '');
+      var declared = document.getElementById('dec').checked;
+
+      if (name.length < 2) { say('Please put your full name in first.', false); document.getElementById('nm').focus(); return; }
+      if (!when) { say('Please set the date you completed the training.', false); return; }
+      if (!declared) { say('Please tick the confirmation box before submitting.', false); document.getElementById('dec').focus(); return; }
+
+      var score = scoreRaw === '' ? null : Math.min(10, parseInt(scoreRaw, 10));
+      sendBtn.disabled = true;
+      say('Sending…', true);
+
+      fetch(SB_URL + '/rest/v1/owp_training_records', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SB_KEY,
+          'Authorization': 'Bearer ' + SB_KEY,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          full_name: name,
+          staff_role: role || null,
+          date_completed: when,
+          material_version: VERSION,
+          quiz_score: score,
+          declaration_accepted: true
+        })
+      }).then(function(r){
+        if (r.ok) {
+          say('Thank you, ' + name.split(' ')[0] + ' — your sign-off has been recorded. Print a copy for your own records if you would like one.', true);
+          sendBtn.textContent = 'Recorded';
+        } else {
+          sendBtn.disabled = false;
+          say('That did not save. Please try again, and if it still fails, print this page and give it to the supervisor on duty.', false);
+        }
+      }).catch(function(){
+        sendBtn.disabled = false;
+        say('No connection, so nothing was saved. Print this page and give it to the supervisor on duty.', false);
+      });
+    });
+  }
 })();
 </script>
 </body>
